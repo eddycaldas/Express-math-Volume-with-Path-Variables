@@ -5,19 +5,16 @@ var app = express();
 var x;
 var y;
 
-myFunction = require('./index.js')
-myMathSumFunction = require('./index.js')
-myMathCalculate = require('./index.js')
 
-app.get('/math/pi', myFunction)
+app.get('/math/pi', function(request, response) {
+  response.send('' + Math.PI)
+})
 
-app.get('/math/pi', function (request) {
+app.get('/math/pi', function (request, response) {
   curlify(request);
 })
 
-app.get('/math/calculate', myMathCalculate)
 
-app.post('/math/sum', myMathSumFunction)
   
   
 
